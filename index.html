@@ -366,12 +366,14 @@ const repopulateLibrary = (past) => {
 
 
   let runningLibrary = []
+  if (past){
   for (let i = 0; i < past.length; i++) {
     let newBook = new Book(past[i].title, past[i].author, past[i].pages, past[i].read)
     newBook.outerColor = past[i].outerColor
     newBook.innerColor = past[i].innerColor
     runningLibrary[i] = newBook
   }
+}
 return runningLibrary
 }
 const randomColor = () => (Math.floor(Math.random()*18) * 20).toString()
