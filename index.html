@@ -301,7 +301,9 @@ this.innerColor = `hsl(${color}, 30%, 60%)`
 
 }
 const updatePage = () => {
+  if (myLibrary.length > 0){
   theBookshelf.innerHTML = '';
+}
   bookList.innerHTML = 'A Running List of Books';         
   for (let i = 0; i < myLibrary.length; i++) {
     addBookToBookshelf(myLibrary[i], i + 1)
