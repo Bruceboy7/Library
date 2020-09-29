@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+
+<style>
+
+html {
+
+  background-image: url("https://elburn.lib.il.us/wp-content/uploads/2017/05/library-services.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Mansalva', cursive;
+}
+button{
+
+  height:50px;
+  width: 200px;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 0 0 4px #dddddddd, 1px 1px 2px #333333;
+  background-color: #ffffff;
+  font-family: 'Mansalva', cursive;
+  font-size: 18px;
+
+}
+button:hover{
+
+  font-size: 32px;
+  color: rgb(105, 21, 21);
+
+}
+button:active {
+
+  font-size: 26px;
+  color: rgb(187, 145, 56);
+
+  
+
+}
+body {
+  background-color: #DDDDDD66;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 90vw;
+  border-radius: 40px;
+
+}
+span {
+  
+  text-shadow: 2px 2px 2px black, 0 0 7px white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 49px;
+  color: rgb(35, 25, 133);
+  font-family: 'Mansalva', cursive;
+  
+}
+
+#display {
+  display: flex;
+  flex-direction: row;
+ 
+}
+#displayText{
+  font-family: 'Mansalva', cursive;
+}
+
+.library{
+  border: 15px dashed #25423488;
+  box-shadow: 0 0 15px rgb(179, 179, 179);
+  border-radius: 5px;
+  width: 400px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding: 10px;
+  flex-direction: column;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTswxKuTk6qLdr5qkKkEfIwg63IPRuZaG7q5w&usqp=CAU");
+  background-size: cover;
+  opacity: 85%;
+  
+  
+}
+.book {
+  height: 230px;
+  width: 195px;
+  margin: 20px;
+  border-left: solid 7px black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 4px 2px 2px black;
+  border-radius: 3px;
+  position: relative;
+}
+.label {
+  height: auto;
+  width: auto;
+  margin-top: 20px;
+  border-radius: 2px; 
+  margin: 10px;
+  box-shadow: 1px 1px 2px black; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 15px;
+  padding:5px;
+
+}
+.editBtn{
+  height: 20px;
+  width: 45px;
+  background-color: coral;
+  box-shadow: 2px 2px 2px #333;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5px;
+  
+}
+.editBtn:hover {
+  cursor: pointer;
+  transform: scale(1.2)
+
+}
+.editBtn.side  {
+  background-color: blue ;
+  position: relative;
+  margin-bottom: 20px;
+  top: 0px;
+  right: 2px;
+
+  
+}
+.readCheck {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 1px #333;
+  border: 4px inset rgb(5, 71, 14);
+  background-size: cover;
+  border-radius: 15px;
+  background-image: url("https://cdn4.vectorstock.com/i/1000x1000/98/23/hand-drawn-green-grunge-check-mark-vector-16489823.jpg");
+  opacity: 80%;
+  box-shadow: 1px 1px 3px #333333dd;
+
+}
+.readCheck:hover {
+  transform: scale(1.2);
+}
+.delete {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color:rgba(224, 6, 6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 1px #333333dd; 
+  background-size: cover;
+  border: 2px outset  #333333dd;
+  background-image: url("https://static.thenounproject.com/png/2998844-200.png");
+  opacity: 80%;
+  box-shadow: 1px 2px 3px #333333dd;
+}
+.delete:hover {
+  transform: scale(1.2)
+}
+#bookshelf {
+  background-image:url("https://t3.ftcdn.net/jpg/01/99/01/16/240_F_199011618_OEyRA93e9tMMbfmwwJ5qgz7adkPuz3JE.jpg");
+  background-size: cover;
+  border-radius: 30px;
+  width: 50vw;
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 100;
+  padding: 10px;
+  margin: 23px;
+  overflow-y: scroll;
+  flex-grow: 2;
+  /* ?? ^ unsure if above is needed ^ */
+  box-shadow: 0 0 15px rgba(184, 184, 184, 0.836), 3px 2px 4px black;
+
+}
+.sideBook {
+  width: 380px;
+  height: 35px;
+  background-color: cadetblue;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 16px;
+  box-shadow: 4px -2px 2px #444;
+  opacity: 100% !important;
+  position: relative;
+}
+.info{
+  width: 345px;
+}
+
+</style>
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://static.thenounproject.com/png/148810-200.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
+
+  <title style="color: rgb(206, 47, 47)">Library</title>
+</head>
+
+
+
+<body>
+
+  <span>Hello World. Welcome to your Library!!</span>
+  <button id="addBook">Add a Book</button>
+  <div id="display">
+    <div id="displayText" class="library">A Running List of Books</div>
+    <div id="bookshelf">Click "Add a Book" to add to your library. Have the title, author, # of pages, and if you've read the book. 
+    </div>
+ 
+</body>
+
+
+<script>
+
+function Book(theTitle, theAuthor, pages, read) {
+
+let color = "#000000";
+
+this.title = theTitle;
+this.author = theAuthor
+this.pages = pages
+this.read = read
+this.info = () => {
+  return(`${this.title} by ${this.author}, ${this.pages} pages, ${(this.read) ? "and you already read it" : "and you haven't read it yet"}.`)
+}
+this.editBook = () => {
+  let userChoice = prompt("what would you like to edit? (please type either 'title', 'author', or 'pages' (or 'all' to input the book again.). If you are changing from 'read' to 'unread', type either of those two states)")
+  if (userChoice !== null) {
+  switch (userChoice.toUpperCase()) {
+    case "TITLE":
+      this.title = prompt("you chose title! type in the title of the book:")
+      break
+    case "AUTHOR":
+      this.author = prompt("you chose author! type in the author's name:")
+      break
+    case "PAGES":
+      this.pages = prompt("you chose pages! how many pages are in the book?:")
+      break
+    case "READ":
+      this.read = true
+      break
+    case "UNREAD": 
+      this.read = false
+      break
+    case "COLOR":
+      let newColor = randomColor()
+      this.outerColor = `hsl(${newColor}, 60%, 50%)`
+      this.innerColor = `hsl(${newColor}, 30%, 60%)` 
+      break
+    case "ALL":
+      
+        this.title = prompt("New Title?", `${this.title}`)
+        this.author = prompt("New Author?", `${this.author} `)
+        this.pages = prompt("how many pages?", `${this.pages}`)
+        this.read = confirm("read/unread?", `${(this.read) ? "read" : "unread"}`)
+        break
+    default: 
+        alert("response invalid. nothing edited")
+        break
+  }
+
+}
+}
+color = randomColor()
+this.outerColor = `hsl(${color}, 60%, 50%)`
+this.innerColor = `hsl(${color}, 30%, 60%)` 
+
+}
+const updatePage = () => {
+  theBookshelf.innerHTML = '';
+  bookList.innerHTML = 'A Running List of Books';         
+  for (let i = 0; i < myLibrary.length; i++) {
+    addBookToBookshelf(myLibrary[i], i + 1)
+    addBookToLibrary(myLibrary[i], i + 1)
+    
+  }
+updatedLibrary = JSON.stringify(myLibrary)
+localStorage.setItem("pastLibrary", updatedLibrary)
+
+}
+const addBookToBookshelf = (book, index) => {
+
+
+let lilBook = document.createElement('div')
+lilBook.setAttribute("id", `book${index}`)
+lilBook.setAttribute("class", `book`)
+let lilBookLabel = document.createElement('div')
+lilBookLabel.setAttribute("id", `book${index}Label`)
+lilBookLabel.setAttribute("class", `label`) 
+lilBook.setAttribute("style", `background-color: ${book.outerColor}`)
+lilBookLabel.style = `background-color: ${book.innerColor};`
+lilBookLabel.innerHTML = book.title;
+let lilBookEdit = document.createElement('div')
+lilBookEdit.setAttribute('id', `edit${index}`)  
+lilBookEdit.setAttribute("class", "editBtn") 
+lilBookEdit.innerHTML = "edit"
+lilBookEdit.setAttribute("title", "click to edit book")
+let lilBookReadCheck = document.createElement('div')
+lilBookReadCheck.setAttribute("id", `readCheck${index}`)
+lilBookReadCheck.setAttribute("class", `readCheck`)
+lilBookReadCheck.setAttribute("title", "click to toggle read/unread")
+lilBookReadCheck.setAttribute("style", (book.read) ? 'background-image: url("https://cdn4.vectorstock.com/i/1000x1000/98/23/hand-drawn-green-grunge-check-mark-vector-16489823.jpg"); border: 2px inset rgb(5, 71, 14);' : 'background-image: none; border: 2px inset rgb(206, 47, 47);')
+let lilBookDelete = document.createElement('div')
+lilBookDelete.setAttribute("id", `delete${index}`)
+lilBookDelete.setAttribute("class", `delete`)
+lilBookDelete.setAttribute("title", "click to delete from library")
+
+
+
+lilBook.addEventListener('click', function(e){
+  if ((e.target.textContent !== "edit") && (e.target.className !== "readCheck") && (e.target.className !== "delete")) {
+    alert(book.info()) }
+})  
+
+lilBook.appendChild(lilBookLabel)
+lilBook.appendChild(lilBookEdit)
+lilBook.appendChild(lilBookReadCheck)
+lilBook.appendChild(lilBookDelete)
+theBookshelf.appendChild(lilBook)
+
+}
+const addBookToLibrary = (book, index) => {
+
+ bookList.innerHTML += `<div id="sideBook${index}" class="sideBook" style="background-color: ${book.outerColor};">\
+  <div id="sideBook${index}Info" class="info">(${index})-${book.info()}</div>\
+  <div id="sideEdit${index}" class="editBtn side">edit</div>\
+  </div>`;
+
+
+}
+const repopulateLibrary = (past) => {
+
+
+  let runningLibrary = []
+  for (let i = 0; i < past.length; i++) {
+    let newBook = new Book(past[i].title, past[i].author, past[i].pages, past[i].read)
+    newBook.outerColor = past[i].outerColor
+    newBook.innerColor = past[i].innerColor
+    runningLibrary[i] = newBook
+  }
+return runningLibrary
+}
+const randomColor = () => (Math.floor(Math.random()*18) * 20).toString()
+let libraryCheck = JSON.parse(localStorage.getItem("pastLibrary"))
+
+let updatedLibrary = '' 
+let myLibrary = []
+
+
+console.log(localStorage.getItem("pastLibrary"))
+console.table(myLibrary)
+myLibrary = repopulateLibrary(libraryCheck)
+
+
+let bookList = document.querySelector("#displayText")
+let addButton = document.querySelector("#addBook")
+//adding a book
+addButton.addEventListener("click", function(e) {
+  if (myLibrary.length == 0) {
+    theBookshelf.innerHTML = ''
+  }
+
+
+  myLibrary[myLibrary.length] = new Book(
+    prompt("What is the title of the book?"),
+    prompt("Who wrote it?"),
+    prompt("how many pages?"),
+    confirm("have you read the book?"),
+  )
+  
+
+  updatePage()
+ 
+}) 
+
+
+
+// button click functionality
+window.addEventListener('click', function(e){
+  if (e.target.innerText === "edit") { 
+    let editKey = e.srcElement.id.toUpperCase()
+    editKey = editKey.replace('EDIT', '') 
+    if (!+editKey) {
+      console.log(editKey)
+      editKey = editKey.replace('SIDE', '');
+    }
+    let libraryKey = +editKey - 1;  
+      myLibrary[libraryKey].editBook()
+      updatePage()  
+  }
+  if (e.target.className === "readCheck") {
+    let editKey = e.target.id
+    editKey = +editKey.replace('readCheck', '') - 1
+     myLibrary[editKey].read ? myLibrary[editKey].read = false : myLibrary[editKey].read = true
+     updatePage()
+     
+  }
+  //delete button 
+ if (e.target.className === "delete"){
+    let libraryKey = +e.target.id.replace('delete', '') - 1
+
+    if (confirm(`are you sure you want to delete '${myLibrary[libraryKey].title}'?`)){
+    let counter = 0
+    let newLibrary = []
+    for (let i = 0; i < myLibrary.length; i++){
+      if (libraryKey !== i) {
+        newLibrary[counter++] = myLibrary[i]
+      }
+    }
+      console.table(newLibrary)
+      myLibrary = newLibrary
+      updatePage()
+  }
+    }
+  
+})
+
+
+
+let theBookshelf = document.querySelector("#bookshelf")
+
+
+
+updatePage()
+//STILL TO DO -----
+
+// when adding books, make it check if they are valid answers. 
+
+// when mouse is hovering over a book, display author, pages and read/unread on the cover
+
+//OPTIONAL - Change the user input to a form, same with edit button.
+
+
+</script>
+</html>
+
+
