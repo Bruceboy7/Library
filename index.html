@@ -301,8 +301,12 @@ this.innerColor = `hsl(${color}, 30%, 60%)`
 
 }
 const updatePage = () => {
-  if (myLibrary.length > 0){
+
   theBookshelf.innerHTML = '';
+
+  if (myLibrary.length == 0){
+  
+    theBookshelf.innerHTML = `Click "Add a Book" to add to your library. Have the title, author, # of pages, and if you've read the book. `
 }
   bookList.innerHTML = 'A Running List of Books';         
   for (let i = 0; i < myLibrary.length; i++) {
@@ -394,10 +398,7 @@ let bookList = document.querySelector("#displayText")
 let addButton = document.querySelector("#addBook")
 //adding a book
 addButton.addEventListener("click", function(e) {
-  if (myLibrary.length == 0) {
-    theBookshelf.innerHTML = ''
-  }
-
+ 
 
   myLibrary[myLibrary.length] = new Book(
     prompt("What is the title of the book?"),
